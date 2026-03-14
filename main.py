@@ -2,18 +2,28 @@ import time
 from robot import Robot
 from order import Order
 
+class Warehouse:
+    def __init__(self):
+        self.robot = Robot(1,1)
+        self.order = Order()
+        self.created_orders = 0
+
 
 def main():
-    robot = Robot(1,1)
-    order = Order()
+    warehouse = Warehouse()
+    
 
     while True:
-        robot.update() #tworzymy u updatujemy | pozycja x,| pozycja y|
-        order.create_order(5 , "iphone 12") #order dodajemy nowy | quantity | Nazwa  
+       
+        if  warehouse.order.order_count < warehouse.order.max_orders: #sprawdzamy czy mamy jakies ordery do wykonania
+            warehouse.order.create_order(5 , "iphone 12") #order dodajemy nowy | quantity | Nazwa  
+            warehouse.created_orders += 1
+            
+        warehouse.robot.update() #tworzymy u updatujemy | pozycja x,| pozycja y|
         time.sleep(2)
     
     
     
     
-    
-main()
+if __name__ == "__main__":
+    main()
