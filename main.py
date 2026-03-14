@@ -5,7 +5,7 @@ from racks import Racks
 
 class Warehouse:
     def __init__(self):
-        self.robot = Robot(4,4)
+        self.robot = Robot(4,4, False) # x | y | is busy|
         self.order = Order()
         self.racks = Racks()
         self.created_orders = 0
