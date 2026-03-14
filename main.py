@@ -1,16 +1,22 @@
 import time
 from robot import Robot
 from order import Order
+from racks import Racks
 
 class Warehouse:
     def __init__(self):
-        self.robot = Robot(1,1)
+        self.robot = Robot(4,4)
         self.order = Order()
+        self.racks = Racks()
         self.created_orders = 0
-
+        self.item = Racks.StockItem() #tutaj dodajemy __str__ z stock item podklasy
 
 def main():
     warehouse = Warehouse()
+    warehouse.racks.fill_stock()
+    print(str(warehouse.item)) # drukujemy __str__ ze stock item
+    
+    
     
 
     while True:
