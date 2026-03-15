@@ -3,7 +3,7 @@ class Order:
         self.__order_list = []
         self.order_count = 0
         self.max_orders = 2
-        #print("uruchamianie obiektu order")
+        self.distributed_orders = []
         
     
     def create_order(self, quantity, item_id):
@@ -15,4 +15,12 @@ class Order:
         print(f"Aktualnie generowane zamowienie: ilosc {self.__quantity} item id: {self.__item_id} order id: {self.order_id}")
         current_order = (self.__quantity, self.__item_id, self.order_id)
         self.__order_list.append(current_order)
-        
+    
+    def distrib_order(self): #funkcja odpowiadajaca za dawanie orderow robotom
+        if len(self.__order_list) > 0:
+            order = self.__order_list.pop(0)
+            self.distributed_orders.append(order)
+            
+            return order
+        return None
+    

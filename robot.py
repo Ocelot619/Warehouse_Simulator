@@ -13,10 +13,18 @@ class Robot():
         print(f"{self.name} Current position: X: {self.pos_x} Y: {self.pos_y} Is Busy: {self.is_busy}")
         
         
-    def taking_order(self):
+    def taking_order(self, order_manager):
         if self.is_busy == False:
+            order = order_manager.distrib_order()
+
             
+            if order != None:
             
+                self.current_order = order
+                self.is_busy = False
+                print(f"Robot {self.name} took order {order}")
+            
+
         
         
 
