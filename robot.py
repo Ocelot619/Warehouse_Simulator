@@ -16,6 +16,7 @@ class Robot():
     def taking_order(self, order_manager):
         if self.is_busy == False:
             order = order_manager.distrib_order()
+            self.is_busy = True
 
             
             if order != None:
