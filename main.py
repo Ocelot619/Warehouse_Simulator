@@ -37,10 +37,6 @@ class Warehouse:
             print('| ' + ' | '.join(row) + ' |')
         print("-" * (width*2 + 1))
 
-# W pętli:
- # self. !
-       
-
 def main():
     warehouse = Warehouse()
     warehouse.racks.fill_stock()
