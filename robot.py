@@ -14,16 +14,17 @@ class Robot():
         
         
     def taking_order(self, order_manager):
-        if self.is_busy == False:
+        if not self.is_busy:
             order = order_manager.distrib_order()
-            self.is_busy = True
-
             
-            if order != None:
-            
+            if order is not None:
+                self.is_busy = True
                 self.current_order = order
-                self.is_busy = False
                 print(f"Robot {self.name} took order {order}")
+            else:
+                print(f"No orders avalibe for {self.name}")
+        else:
+            print(f"{self.name} is busy cannot take order")
             
 
         

@@ -2,7 +2,7 @@ class Order:
     def __init__(self):
         self.__order_list = []
         self.order_count = 0
-        self.max_orders = 2
+        self.max_orders = 5
         self.distributed_orders = []
         
     

@@ -5,11 +5,11 @@ from racks import Racks
 
 class Warehouse:
     def __init__(self):
-        self.robot = Robot(4,4, False) # x | y | is busy|
         self.order = Order()
         self.racks = Racks()
         self.created_orders = 0
         self.item = Racks.StockItem() #tutaj dodajemy __str__ z stock item podklasy
+        self.robot = Robot(4,4, False) # x | y | is busy|
 
 def main():
     warehouse = Warehouse()
