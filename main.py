@@ -10,6 +10,8 @@ class Warehouse:
         self.created_orders = 0
         self.item = Racks.StockItem() #tutaj dodajemy __str__ z stock item podklasy
         self.robot = Robot(4,4, False) # x | y | is busy|
+        self.robot.racks = self.racks
+    
 
 def main():
     warehouse = Warehouse()

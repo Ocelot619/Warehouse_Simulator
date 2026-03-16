@@ -8,7 +8,7 @@ class Racks():
             
             
         def __str__(self):
-            return f"Racks item: {self.item_name} pos_x: {self.pos_x} pos_y: {self.pos_y}"    
+            return f"RACKS: added item: {self.item_name} pos_x: {self.pos_x} pos_y: {self.pos_y}"    
         
     def __init__(self):
         self.stock_list = []
@@ -17,6 +17,6 @@ class Racks():
         #tworzymy przedmiot i dodajemy do listy
         item = self.StockItem()
         self.stock_list.append(item)
-        print(f"added to stock {item}")
+        print(f"RACKS: added to stock {item}")
         
         
